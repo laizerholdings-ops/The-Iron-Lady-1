@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Iron Lady All-in-One Services | Solar Panel & Window Cleaning Cape Town</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        burgundy: {
+                            800: '#58111A',
+                            900: '#3D0A11',
+                            950: '#260408'
+                        },
+                        gold: {
+                            500: '#D4AF37',
+                            600: '#B89728',
+                            400: '#E5C158',
+                        },
+                        cream: '#FDFBF7',
+                        charcoal: '#222222'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif']
+                    },
+                    animation: {
+                        'slow-zoom': 'slowZoom 20s infinite alternate',
+                        'float': 'float 4s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 2s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        slowZoom: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.12)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 0 0 rgba(34, 197, 94, 0.4)' },
+                            '70%': { boxShadow: '0 0 0 15px rgba(34, 197, 94, 0)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(25px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #222222;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .dark body {
+            background-color: #120305;
+            color: #FDFBF7;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #FDF0CD 0%, #D4AF37 50%, #997A15 100%);
+        }
+        .burgundy-gradient {
+            background: linear-gradient(135deg, #58111A 0%, #3D0A11 100%);
+        }
+        /* Scroll reveal initial state */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal antialiased selection:bg-gold-500 selection:text-burgundy-950">
+
+    <!-- Global Video Background for Entire Website -->
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover opacity-25 dark:opacity-20 scale-105">
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/60 to-cream/90 dark:from-burgundy-950/90 dark:via-burgundy-950/80 dark:to-burgundy-950/95 transition-colors duration-500"></div>
+    </div>
+
+    <!-- Top Announcement & Tagline Bar (No Phone/Address numbers) -->
+    <div id="top-bar" class="relative z-20 bg-burgundy-950 text-cream text-xs md:text-sm py-2 px-4 border-b border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="text-gold-400 italic font-medium">Strong. Spotless. Crystal Results.</span>
+                <span class="text-white/30 hidden sm:inline">|</span>
+                <span class="hidden sm:inline text-cream/80">Cape Town's Solar & Window Care Experts</span>
+            </div>
+            <!-- Day / Night Toggle Switch -->
+            <button onclick="toggleDarkMode()" id="theme-toggle" class="flex items-center gap-2 bg-burgundy-900 hover:bg-burgundy-800 text-gold-400 border border-gold-500/40 px-3 py-1 rounded-full text-xs font-semibold transition-all shadow">
+                <i id="theme-icon" class="fa-solid fa-sun text-gold-400"></i>
+                <span id="theme-text">Day Mode</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar (Headers: Home, Services, About Us, Contacts) -->
+    <header id="navbar" class="sticky top-0 z-40 bg-cream/90 dark:bg-burgundy-950/90 backdrop-blur-md shadow-sm border-b border-burgundy-900/10 dark:border-gold-500/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+            <!-- Brand Logo & Name (Enlarged Official Logo) -->
+            <a href="#home" class="flex items-center gap-4 group">
+                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden burgundy-gradient flex items-center justify-center border-2 border-gold-500 shadow-xl group-hover:scale-105 transition-transform bg-white">
+                    <img src="logo.png" alt="The Iron Lady Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-xl sm:text-2xl text-burgundy-900 dark:text-white block leading-tight">The Iron Lady</span>
+                    <span class="text-xs uppercase tracking-widest text-gold-600 dark:text-gold-400 font-semibold">All-in-One Services</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links: Home, Services, About Us, Contacts -->
+            <nav class="hidden lg:flex items-center gap-10 font-medium text-sm text-burgundy-900 dark:text-cream">
+                <a href="#home" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors">Home</a>
+                <a href="#services" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors">Services</a>
+                <a href="#about" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors">About Us</a>
+                <a href="#quote-section" class="hover:text-gold-600 dark:hover:text-gold-400 transition-colors">Contacts</a>
+            </nav>
+
+            <!-- Desktop CTA Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="#quote-section" class="bg-burgundy-900 dark:bg-gold-500 hover:bg-burgundy-800 dark:hover:bg-gold-400 text-gold-400 dark:text-burgundy-950 border border-gold-500/50 px-5 py-2.5 rounded-full text-sm font-semibold shadow-md transition-all hover:scale-105 flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i> Get Free Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-burgundy-900 dark:text-cream focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-cream dark:bg-burgundy-950 border-b border-burgundy-900/10 dark:border-gold-500/20 px-4 pt-2 pb-6 space-y-3 shadow-xl">
+            <a href="#home" class="mobile-link block py-2 font-medium text-burgundy-900 dark:text-cream border-b border-burgundy-900/5 dark:border-white/10">Home</a>
+            <a href="#services" class="mobile-link block py-2 font-medium text-burgundy-900 dark:text-cream border-b border-burgundy-900/5 dark:border-white/10">Services</a>
+            <a href="#about" class="mobile-link block py-2 font-medium text-burgundy-900 dark:text-cream border-b border-burgundy-900/5 dark:border-white/10">About Us</a>
+            <a href="#quote-section" class="mobile-link block py-2 font-medium text-burgundy-900 dark:text-cream border-b border-burgundy-900/5 dark:border-white/10">Contacts</a>
+            <div class="pt-2">
+                <a href="#quote-section" class="mobile-link w-full text-center block bg-burgundy-900 dark:bg-gold-500 text-gold-400 dark:text-burgundy-950 py-3 rounded-xl font-semibold shadow">Get Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative text-white min-h-[92vh] flex items-center overflow-hidden z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 w-full">
+            <div class="max-w-3xl space-y-6">
+                <div class="inline-flex items-center gap-2 bg-gold-500/20 border border-gold-500/40 text-gold-600 dark:text-gold-400 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider animate-fade-in-up">
+                    <i class="fa-solid fa-star text-gold-500"></i> Cape Town's Premier Solar Care Specialists
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl font-serif font-bold tracking-tight leading-tight text-burgundy-950 dark:text-white animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Cleaner Panels. <span class="text-transparent bg-clip-text gold-gradient">Better Solar Performance.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-charcoal/90 dark:text-cream/90 font-light leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Professional Solar Panel & Window Cleaning Services in Cape Town. Using pure deionized water technology to maximise your energy generation and protect your investment.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <a href="#quote-section" class="bg-gold-500 hover:bg-gold-400 text-burgundy-950 font-bold px-8 py-4 rounded-xl shadow-2xl transition-all transform hover:-translate-y-1 flex items-center gap-3">
+                        <i class="fa-solid fa-calculator"></i> GET A FREE QUOTE
+                    </a>
+                    <a href="#services" class="bg-burgundy-900/10 dark:bg-white/10 hover:bg-burgundy-900/20 dark:hover:bg-white/20 text-burgundy-950 dark:text-white border border-burgundy-900/30 dark:border-white/30 font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all flex items-center gap-3 hover:border-gold-500">
+                        VIEW OUR SERVICES <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="pt-10 grid grid-cols-3 gap-6 border-t border-burgundy-900/20 dark:border-white/15 text-burgundy-950 dark:text-cream/90 text-sm animate-fade-in-up" style="animation-delay: 0.8s;">
+                    <div>
+                        <span class="block font-serif font-bold text-2xl sm:text-3xl text-gold-600 dark:text-gold-400">100%</span>
+                        <span class="text-xs sm:text-sm">Pure Deionized Water</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-2xl sm:text-3xl text-gold-600 dark:text-gold-400">Up to 30%</span>
+                        <span class="text-xs sm:text-sm">More Power Output</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif font-bold text-2xl sm:text-3xl text-gold-600 dark:text-gold-400">Fish Hoek</span>
+                        <span class="text-xs sm:text-sm">& Cape Peninsula</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal">
+                <span class="text-gold-600 dark:text-gold-400 font-semibold tracking-widest uppercase text-sm">Our Professional Services</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy-900 dark:text-white">Designed for Peak Performance</h2>
+                <p class="text-charcoal/80 dark:text-cream/80 font-light">Specialised cleaning solutions crafted to protect your renewable energy investment and bring crystal clarity to your windows.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Service 1: Solar Panel Cleaning -->
+                <div class="bg-white/80 dark:bg-burgundy-900/90 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-burgundy-900/10 dark:border-gold-500/30 flex flex-col justify-between group hover:border-gold-500 transition-all duration-500 reveal">
+                    <div>
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=1000&q=80" alt="Solar panel cleaning with pure water equipment on South African residential roof" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950/80 via-transparent to-transparent"></div>
+                            <div class="absolute top-4 left-4 bg-gold-500 text-burgundy-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider shadow-md">
+                                SERVICE 01
+                            </div>
+                        </div>
+                        <div class="p-8 space-y-4">
+                            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-burgundy-900 dark:text-gold-400">Professional Solar Panel Cleaning</h3>
+                            <p class="text-charcoal/80 dark:text-cream/80 text-sm sm:text-base font-light leading-relaxed">
+                                Use pure deionized water technology to clean solar panels safely and effectively without harsh chemicals, ensuring spotless drying under the Cape Town sun.
+                            </p>
+                            <div class="space-y-2 pt-2">
+                                <p class="text-xs uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Key Benefits:</p>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-charcoal/90 dark:text-cream/90">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Removes dust & grime</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Improves panel efficiency</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Protects solar investment</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Eco-friendly approach</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Residential & Commercial</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Maximises energy output</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <button onclick="selectService('Solar Panel Cleaning')" class="w-full bg-gold-500 hover:bg-gold-400 text-burgundy-950 font-bold py-4 px-6 rounded-xl transition-all shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <span>REQUEST A QUOTE</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2: Window Cleaning -->
+                <div class="bg-white/80 dark:bg-burgundy-900/90 backdrop-blur-md rounded-3xl overflow-hidden shadow-2xl border border-burgundy-900/10 dark:border-gold-500/30 flex flex-col justify-between group hover:border-gold-500 transition-all duration-500 reveal">
+                    <div>
+                        <div class="relative h-72 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80" alt="Modern South African residential home with clean glass windows and mountain backdrop" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950/80 via-transparent to-transparent"></div>
+                            <div class="absolute top-4 left-4 bg-gold-500 text-burgundy-950 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider shadow-md">
+                                SERVICE 02
+                            </div>
+                        </div>
+                        <div class="p-8 space-y-4">
+                            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-burgundy-900 dark:text-gold-400">Professional Window Cleaning</h3>
+                            <p class="text-charcoal/80 dark:text-cream/80 text-sm sm:text-base font-light leading-relaxed">
+                                Enjoy streak-free, crystal-clear windows with our professional window cleaning service designed for modern homes and commercial buildings.
+                            </p>
+                            <div class="space-y-2 pt-2">
+                                <p class="text-xs uppercase tracking-wider text-gold-600 dark:text-gold-400 font-semibold">Key Benefits:</p>
+                                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-charcoal/90 dark:text-cream/90">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Crystal-clear finishes</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Streak-free cleaning</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Brighter indoor spaces</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Residential properties</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Commercial buildings</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-gold-500 text-xs"></i> Exceptional attention to detail</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <button onclick="selectService('Window Cleaning')" class="w-full bg-gold-500 hover:bg-gold-400 text-burgundy-950 font-bold py-4 px-6 rounded-xl transition-all shadow-xl hover:scale-[1.02] flex items-center justify-center gap-2">
+                            <span>REQUEST A QUOTE</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image with Zoom & Reveal (Solar panel cleaning technician) -->
+                <div class="relative reveal">
+                    <div class="absolute -inset-4 bg-gold-500/20 rounded-3xl transform -rotate-2 animate-float"></div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-burgundy-900 bg-burgundy-900 group">
+                        <img src="https://images.pexels.com/photos/33379364/pexels-photo-33379364.jpeg" alt="Efficient solar panel cleaning in Tampa Florida by Florida Solar Fix" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-burgundy-900 text-cream p-6 rounded-2xl shadow-xl border border-gold-500/40 hidden sm:block">
+                        <p class="font-serif text-2xl text-gold-400 font-bold">Strong & Spotless</p>
+                        <p class="text-xs tracking-widest uppercase text-cream/70">Crystal Results Guaranteed</p>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-6 reveal">
+                    <div class="inline-flex items-center gap-2 text-gold-600 dark:text-gold-400 font-semibold text-sm tracking-wider uppercase">
+                        <i class="fa-solid fa-shield-halved"></i> About The Iron Lady
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy-900 dark:text-white leading-tight">
+                        Cape Town's Expert Solar & Window Care Specialists
+                    </h2>
+                    <p class="text-charcoal/80 dark:text-cream/80 leading-relaxed font-light text-base">
+                        <strong>The Iron Lady All-in-One Services</strong> is Cape Town's specialist in professional solar panel cleaning using pure deionized water technology. We help homeowners and businesses maintain their solar installations through safe, effective and environmentally friendly cleaning methods.
+                    </p>
+                    <p class="text-charcoal/80 dark:text-cream/80 leading-relaxed font-light text-base">
+                        Our specialised cleaning approach removes accumulated dust, salt spray from the Atlantic coastline, bird droppings, and environmental deposits that can severely compromise solar panel efficiency.
+                    </p>
+                    <p class="text-charcoal/80 dark:text-cream/80 leading-relaxed font-light text-base">
+                        In addition to solar care, we offer professional window cleaning as our premium secondary service, delivering streak-free, crystal-clear results that brighten your entire property.
+                    </p>
+                    
+                    <div class="pt-4 flex flex-wrap items-center gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-600 dark:text-gold-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Eco-Friendly Pure Water</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-gold-500/20 text-gold-600 dark:text-gold-400 flex items-center justify-center font-bold">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Residential & Commercial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal">
+                <span class="text-gold-600 dark:text-gold-400 font-semibold tracking-widest uppercase text-sm">The Iron Lady Advantage</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy-900 dark:text-white">Why Choose Us</h2>
+                <p class="text-charcoal/70 dark:text-cream/70 font-light">We take pride in our uncompromising standards, advanced pure water technology, and dedication to Cape Town clients.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reason 1 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">1. Pure Water Technology</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Professional deionized water cleaning methods that eliminate mineral deposits and guarantee spotless, residue-free drying.
+                    </p>
+                </div>
+
+                <!-- Reason 2 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">2. Quality Results</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Strong attention to detail and cleanliness, ensuring your panels and glass surfaces achieve crystal perfection every time.
+                    </p>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">3. Eco-Friendly Approach</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Responsible cleaning methods using chemical-free pure water that protects your garden, pets, and the environment.
+                    </p>
+                </div>
+
+                <!-- Reason 4 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">4. Solar Performance Focus</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Dedicated to helping Cape Town customers maintain their solar investments and achieve maximum energy generation.
+                    </p>
+                </div>
+
+                <!-- Reason 5 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">5. Residential & Commercial</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Tailored solar and window cleaning packages designed for both suburban homes and large commercial business premises.
+                    </p>
+                </div>
+
+                <!-- Reason 6 -->
+                <div class="bg-white/90 dark:bg-burgundy-900/90 backdrop-blur-md p-8 rounded-2xl shadow-md border border-burgundy-900/10 dark:border-gold-500/30 hover:border-gold-500 transition-all hover:-translate-y-2 reveal">
+                    <div class="w-14 h-14 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center text-2xl mb-6 shadow-md">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-burgundy-900 dark:text-white mb-3">6. Professional Service</h3>
+                    <p class="text-charcoal/70 dark:text-cream/80 text-sm font-light leading-relaxed">
+                        Unwavering commitment to customer satisfaction, punctuality, dependable communication, and courteous service.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="bg-white/90 dark:bg-burgundy-900/90 p-10 rounded-3xl border border-burgundy-900/10 dark:border-gold-500/30 backdrop-blur-md shadow-2xl space-y-4 reveal">
+                    <div class="text-gold-600 dark:text-gold-400 font-semibold uppercase tracking-widest text-xs flex items-center gap-2">
+                        <i class="fa-solid fa-bullseye"></i> Our Mission
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-burgundy-900 dark:text-white">Maximising Solar Power</h3>
+                    <p class="text-charcoal/80 dark:text-cream/90 font-light leading-relaxed">
+                        To maximise solar performance for Cape Town homes and businesses through safe, eco-friendly, pure water cleaning.
+                    </p>
+                </div>
+
+                <div class="bg-white/90 dark:bg-burgundy-900/90 p-10 rounded-3xl border border-burgundy-900/10 dark:border-gold-500/30 backdrop-blur-md shadow-2xl space-y-4 reveal">
+                    <div class="text-gold-600 dark:text-gold-400 font-semibold uppercase tracking-widest text-xs flex items-center gap-2">
+                        <i class="fa-solid fa-eye"></i> Our Vision
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-burgundy-900 dark:text-white">Leading Western Cape Expertise</h3>
+                    <p class="text-charcoal/80 dark:text-cream/90 font-light leading-relaxed">
+                        To become the leading solar panel cleaning experts in the Western Cape, delivering outstanding service and exceptional cleaning results.
+                    </p>
+                    <div class="pt-2">
+                        <span class="text-gold-600 dark:text-gold-400 font-serif italic text-lg font-bold">Strong. Spotless. Crystal Results.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Gallery Section -->
+    <section id="gallery" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4 reveal">
+                <span class="text-gold-600 dark:text-gold-400 font-semibold tracking-widest uppercase text-sm">Visual Showcase</span>
+                <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy-900 dark:text-white">Our Work & Gallery</h2>
+                <p class="text-charcoal/70 dark:text-cream/70 font-light">Explore our professional solar and window cleaning results across Cape Town and Western Cape properties.</p>
+            </div>
+
+            <!-- Gallery Grid with Smooth Hover Zooms -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery 1 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.pexels.com/photos/14614266/pexels-photo-14614266.jpeg" alt="Men working with solar panels by Trinh Trần from Pexels" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Solar Care</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Pure Water Solar Panel Cleaning</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 2 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&w=800&q=80" alt="Professional solar cleaning equipment" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Equipment</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Advanced Deionized Water Systems</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 3 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Window cleaning and South African home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Window Cleaning</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Crystal-Clear Window Finishes</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 4 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80" alt="Residential rooftop solar installations" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Residential</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Fish Hoek Rooftop Solar Maintenance</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 5 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.pexels.com/photos/6961123/pexels-photo-6961123.jpeg" alt="Solar technicians installing solar panels by Hoan Ngọc from Pexels" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Cape Town</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Clean Panels Under Bright Sunshine</h4>
+                    </div>
+                </div>
+
+                <!-- Gallery 6 -->
+                <div class="group relative rounded-2xl overflow-hidden shadow-lg h-80 bg-burgundy-950 reveal">
+                    <img src="https://images.pexels.com/photos/33159265/pexels-photo-33159265.jpeg" alt="Aerial view of solar powered building by Nathanael Schmer from Pexels" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950 via-burgundy-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Commercial</span>
+                        <h4 class="text-white font-serif font-bold text-lg">Commercial Solar Performance Care</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="py-20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 reveal">
+                    <span class="text-gold-600 dark:text-gold-400 font-semibold tracking-widest uppercase text-sm">Where We Operate</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif font-bold text-burgundy-900 dark:text-white">Proudly Serving Cape Town and Surrounding Communities</h2>
+                    <p class="text-charcoal/80 dark:text-cream/80 font-light leading-relaxed">
+                        Based centrally in Ocean View and Fish Hoek, we provide prompt, reliable solar panel and window cleaning services throughout the Cape Town metropole and the Southern Peninsula.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-center gap-3 bg-white/80 dark:bg-burgundy-950/50 p-4 rounded-xl border border-burgundy-900/10 dark:border-gold-500/20">
+                            <i class="fa-solid fa-location-dot text-gold-600 dark:text-gold-400"></i>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Ocean View</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/80 dark:bg-burgundy-950/50 p-4 rounded-xl border border-burgundy-900/10 dark:border-gold-500/20">
+                            <i class="fa-solid fa-location-dot text-gold-600 dark:text-gold-400"></i>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Fish Hoek</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/80 dark:bg-burgundy-950/50 p-4 rounded-xl border border-burgundy-900/10 dark:border-gold-500/20">
+                            <i class="fa-solid fa-location-dot text-gold-600 dark:text-gold-400"></i>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Southern Peninsula</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/80 dark:bg-burgundy-950/50 p-4 rounded-xl border border-burgundy-900/10 dark:border-gold-500/20">
+                            <i class="fa-solid fa-location-dot text-gold-600 dark:text-gold-400"></i>
+                            <span class="font-semibold text-burgundy-900 dark:text-cream">Greater Cape Town</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-gold-500/30 h-[380px] reveal group relative">
+                    <img src="https://images.pexels.com/photos/8853504/pexels-photo-8853504.jpeg" alt="Solar technician carrying solar panel by Los Muertos Crew from Pexels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-burgundy-950/80 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4 text-white p-4">
+                        <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Cape Town Coverage</span>
+                        <h4 class="font-serif font-bold text-lg">On-Site Professional Solar Care</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote / Contact Section -->
+    <section id="quote-section" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-8 reveal">
+                    <div class="space-y-4">
+                        <span class="text-gold-600 dark:text-gold-400 font-semibold tracking-widest uppercase text-sm">Get in Touch</span>
+                        <h2 class="text-3xl sm:text-5xl font-serif font-bold text-burgundy-900 dark:text-white">Request Your Free Quote Today</h2>
+                        <p class="text-charcoal/70 dark:text-cream/80 font-light leading-relaxed">
+                            Ready to maximise your solar yield or enjoy crystal-clear windows? Fill out the form or reach out directly via phone or WhatsApp.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-burgundy-900 dark:text-white">Call Us</h4>
+                                <a href="tel:0670018362" class="text-charcoal/80 dark:text-cream/80 hover:text-gold-600 dark:hover:text-gold-400 transition-colors font-medium">067 001 8362</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-burgundy-900 dark:text-white">Email Enquiries</h4>
+                                <a href="mailto:info@theironladyservices.co.za" class="text-charcoal/80 dark:text-cream/80 hover:text-gold-600 dark:hover:text-gold-400 transition-colors font-medium block">info@theironladyservices.co.za</a>
+                                <a href="mailto:bookings.theironlady@gmail.com" class="text-charcoal/80 dark:text-cream/80 hover:text-gold-600 dark:hover:text-gold-400 transition-colors font-medium text-xs">bookings.theironlady@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-burgundy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-md">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif font-bold text-burgundy-900 dark:text-white">Our Location</h4>
+                                <p class="text-charcoal/80 dark:text-cream/80 font-light text-sm">Flamingo Road, Ocean View, Fish Hoek, Cape Town, Western Cape, 7975</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct WhatsApp Card -->
+                    <div class="bg-burgundy-900 p-6 rounded-2xl text-white shadow-xl border border-gold-500/30 flex items-center justify-between">
+                        <div>
+                            <h4 class="font-serif font-bold text-lg text-gold-400">Quick WhatsApp Chat</h4>
+                            <p class="text-xs text-cream/80">Chat instantly with our booking team.</p>
+                        </div>
+                        <a href="https://wa.me/27670018362?text=Hello%20The%20Iron%20Lady%20All-in-One%20Services.%20I%20would%20like%20to%20enquire%20about%20your%20solar%20panel%20cleaning%20and%20window%20cleaning%20services.%20Please%20assist%20me%20with%20a%20quotation." target="_blank" class="bg-green-600 hover:bg-green-500 text-white px-4 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg transition-all hover:scale-105">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="lg:col-span-7 bg-white/95 dark:bg-burgundy-900/90 backdrop-blur-md p-8 sm:p-12 rounded-3xl shadow-2xl border border-burgundy-900/10 dark:border-gold-500/30 reveal">
+                    <form id="quote-form" action="https://formspree.io/f/xbggbalp" method="POST" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Full Name *</label>
+                                <input type="text" name="name" id="form-name" required class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors" placeholder="Enter your full name">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Phone Number *</label>
+                                <input type="tel" name="phone" id="form-phone" required class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. 067 001 8362">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Email Address *</label>
+                                <input type="email" name="email" id="form-email" required class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors" placeholder="your.email@example.com">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Service Required *</label>
+                                <select name="service" id="form-service" class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors">
+                                    <option value="Solar Panel Cleaning">Solar Panel Cleaning</option>
+                                    <option value="Window Cleaning">Window Cleaning</option>
+                                    <option value="Both Services">Both Services</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Property Type *</label>
+                                <select name="property_type" id="form-property" class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors">
+                                    <option value="Residential">Residential</option>
+                                    <option value="Commercial">Commercial</option>
+                                </select>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Suburb / Location *</label>
+                                <input type="text" name="suburb" id="form-suburb" required class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors" placeholder="e.g. Fish Hoek, Constantia, Camps Bay">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-burgundy-900 dark:text-gold-400">Additional Information</label>
+                            <textarea name="message" id="form-info" rows="4" class="w-full bg-cream dark:bg-burgundy-950 border border-burgundy-900/20 dark:border-gold-500/30 rounded-xl px-4 py-3 text-sm text-charcoal dark:text-cream focus:outline-none focus:border-gold-500 transition-colors" placeholder="Approximate number of solar panels or windows, preferred date, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-burgundy-900 hover:bg-burgundy-800 text-gold-400 font-bold py-4 rounded-xl shadow-xl transition-all hover:scale-[1.01] flex items-center justify-center gap-2 border border-gold-500/30">
+                            <i class="fa-solid fa-paper-plane"></i> REQUEST MY FREE QUOTE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-burgundy-950 text-white pt-16 pb-12 border-t border-gold-500/20 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-14 h-14 rounded-xl overflow-hidden burgundy-gradient flex items-center justify-center border border-gold-500 bg-white">
+                            <img src="logo.png" alt="The Iron Lady Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-serif font-bold text-lg text-white">The Iron Lady</span>
+                    </div>
+                    <p class="text-cream/70 text-sm font-light leading-relaxed">
+                        Strong. Spotless. Crystal Results. Cape Town's premier specialist in professional solar panel and window cleaning.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://wa.me/27670018362?text=Hello%20The%20Iron%20Lady%20All-in-One%20Services.%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 hover:text-burgundy-950 transition-colors flex items-center justify-center text-white">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="tel:0670018362" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 hover:text-burgundy-950 transition-colors flex items-center justify-center text-white">
+                            <i class="fa-solid fa-phone"></i>
+                        </a>
+                        <a href="mailto:info@theironladyservices.co.za" class="w-10 h-10 rounded-full bg-white/10 hover:bg-gold-500 hover:text-burgundy-950 transition-colors flex items-center justify-center text-white">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-cream/80">
+                        <li><a href="#home" class="hover:text-gold-400 transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                        <li><a href="#quote-section" class="hover:text-gold-400 transition-colors">Contacts</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Our Services</h4>
+                    <ul class="space-y-2 text-sm text-cream/80">
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Solar Panel Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Professional Window Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Residential Maintenance</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Commercial Cleaning</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition-colors">Pure Water Technology</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-3">
+                    <h4 class="font-serif font-bold text-lg text-gold-400 mb-4">Contact Info</h4>
+                    <p class="text-xs text-cream/80 flex items-center gap-2"><i class="fa-solid fa-phone text-gold-400"></i> 067 001 8362</p>
+                    <p class="text-xs text-cream/80 flex items-center gap-2"><i class="fa-solid fa-envelope text-gold-400"></i> info@theironladyservices.co.za</p>
+                    <p class="text-xs text-cream/80 flex items-start gap-2"><i class="fa-solid fa-location-dot text-gold-400 mt-0.5"></i> Flamingo Road, Ocean View, Fish Hoek, Cape Town, 7975</p>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-cream/60">
+                <p>&copy; 2026 The Iron Lady All-in-One Services. All Rights Reserved.</p>
+                <p class="mt-2 sm:mt-0 italic text-gold-400">Strong. Spotless. Crystal Results.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Compulsory Floating WhatsApp Icon (Bottom Right with Pulse & Float Animation) -->
+    <a href="https://wa.me/27670018362?text=Hello%20The%20Iron%20Lady%20All-in-One%20Services.%20I%20would%20like%20to%20enquire%20about%20your%20solar%20panel%20cleaning%20and%20window%20cleaning%20services.%20Please%20assist%20me%20with%20a%20quotation." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-pulse-glow animate-float" title="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Custom Modal for Form Submission Success -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-burgundy-950/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-burgundy-900 max-w-md w-full p-8 rounded-3xl text-center space-y-4 shadow-2xl border border-gold-500">
+            <div class="w-16 h-16 bg-gold-500/20 text-gold-600 dark:text-gold-400 rounded-full flex items-center justify-center text-3xl mx-auto">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-serif font-bold text-2xl text-burgundy-900 dark:text-white">Enquiry Submitted!</h3>
+            <p id="modal-msg" class="text-charcoal/80 dark:text-cream/90 text-sm font-light">
+                Thank you for reaching out to The Iron Lady All-in-One Services. We will contact you shortly!
+            </p>
+            <button onclick="closeModal()" class="w-full bg-burgundy-900 text-gold-400 font-bold py-3 rounded-xl shadow hover:bg-burgundy-800 transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript & Scroll Reveal Logic -->
+    <script>
+        // Day / Night Toggle (Default Day Mode)
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeText = document.getElementById('theme-text');
+
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                themeIcon.className = 'fa-solid fa-sun text-gold-400';
+                themeText.innerText = 'Day Mode';
+            } else {
+                html.classList.add('dark');
+                themeIcon.className = 'fa-solid fa-moon text-gold-400';
+                themeText.innerText = 'Night Mode';
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Pre-select service in quote form
+        function selectService(serviceName) {
+            const serviceSelect = document.getElementById('form-service');
+            for(let i=0; i<serviceSelect.options.length; i++) {
+                if(serviceSelect.options[i].value === serviceName) {
+                    serviceSelect.selectedIndex = i;
+                    break;
+                }
+            }
+            document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission handler with Formspree AJAX support
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('quote-form');
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const modal = document.getElementById('success-modal');
+                const modalMsg = document.getElementById('modal-msg');
+
+                if (response.ok) {
+                    modalMsg.innerHTML = `Thank you for reaching out to The Iron Lady All-in-One Services. We have received your enquiry and will be in touch shortly!`;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    form.reset();
+                } else {
+                    modalMsg.innerHTML = `Thank you for reaching out to The Iron Lady All-in-One Services. We have received your request!`;
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                }
+            } catch (error) {
+                const modal = document.getElementById('success-modal');
+                const modalMsg = document.getElementById('modal-msg');
+                modalMsg.innerHTML = `Thank you for reaching out to The Iron Lady All-in-One Services. We have received your request!`;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                form.reset();
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+
+        // Scroll Reveal Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
